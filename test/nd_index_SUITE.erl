@@ -50,6 +50,9 @@ end_per_testcase(_TestCase, Config) ->
 t_count0(_Config) ->
     State = nd_index:new(erlang:make_tuple(2, 0), erlang:make_tuple(2, 15)),
     255 = nd_index:count(State),
+    false = nd_index:empty(nd_index:increment(254, State)),
+    true = nd_index:empty(nd_index:increment(255, State)),
+    false = nd_index:increment(256, State),
     254 = nd_index:count(nd_index:increment(1, State)),
     237 = nd_index:count(nd_index:increment(18, State)),
     ok.
