@@ -61,7 +61,12 @@ create(Length, GroupsCount)
     Index = nd_index:new(erlang:make_tuple(HexadecimalLength, 0),
                          erlang:make_tuple(HexadecimalLength, 15)),
     Count = nd_index:count(Index) + 1,
-    true = GroupsCount =< Count,
+    if
+        GroupsCount =< Count ->
+            ok;
+        true ->
+            erlang:exit(badarg)
+    end,
     GroupSize = ceil(Count / GroupsCount),
     GroupSizeAdjust = ((Count div GroupsCount) /= GroupSize),
     create_groups(GroupsCount, GroupSize, GroupSizeAdjust, Index).
