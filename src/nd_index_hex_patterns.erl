@@ -31,7 +31,7 @@
 %%%
 %%% @author Michael Truog <mjtruog [at] gmail (dot) com>
 %%% @copyright 2014-2017 Michael Truog
-%%% @version 1.3.2 {@date} {@time}
+%%% @version 1.7.1 {@date} {@time}
 %%%------------------------------------------------------------------------
 
 -module(nd_index_hex_patterns).

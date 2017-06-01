@@ -3,8 +3,8 @@
 
 {application, nd_index,
   [{description, "N-dimensional Index"},
-   {vsn, "1.3.2"},
+   {vsn, "1.7.1"},
    {modules, [nd_index, nd_index_hex_patterns]},
    {registered, []},
-   {applications, [stdlib]}]}.
+   {applications, [kernel, stdlib]}]}.
 

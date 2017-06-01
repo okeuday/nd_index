@@ -30,7 +30,7 @@
 %%%
 %%% @author Michael Truog <mjtruog [at] gmail (dot) com>
 %%% @copyright 2010-2017 Michael Truog
-%%% @version 1.3.2 {@date} {@time}
+%%% @version 1.7.1 {@date} {@time}
 %%%------------------------------------------------------------------------
 
 -module(nd_index).
@@ -72,7 +72,7 @@
 -spec new(Min :: tuple(),
           Max :: tuple()) -> #nd_index_state{}.
 
-new(Min, Max) when tuple_size(Min) == tuple_size(Max), Min < Max ->
+new(Min, Max) when tuple_size(Min) == tuple_size(Max), Min =< Max ->
     #nd_index_state{min = Min, max = Max, value = Min}.
 
 %%-------------------------------------------------------------------------
@@ -86,7 +86,7 @@ new(Min, Max) when tuple_size(Min) == tuple_size(Max), Min < Max ->
           Max :: tuple()) -> #nd_index_state{}.
 
 new(Value, Min, Max)
-    when tuple_size(Min) == tuple_size(Max), Min < Max,
+    when tuple_size(Min) == tuple_size(Max), Min =< Max,
          tuple_size(Min) == tuple_size(Value), Min =< Value, Value =< Max ->
     #nd_index_state{min = Min, max = Max, value = Value}.
 
