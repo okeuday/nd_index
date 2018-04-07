@@ -8,7 +8,7 @@
 %%%
 %%% MIT License
 %%%
-%%% Copyright (c) 2010-2017 Michael Truog <mjtruog at protonmail dot com>
+%%% Copyright (c) 2010-2018 Michael Truog <mjtruog at protonmail dot com>
 %%%
 %%% Permission is hereby granted, free of charge, to any person obtaining a
 %%% copy of this software and associated documentation files (the "Software"),
@@ -29,8 +29,8 @@
 %%% DEALINGS IN THE SOFTWARE.
 %%%
 %%% @author Michael Truog <mjtruog at protonmail dot com>
-%%% @copyright 2010-2017 Michael Truog
-%%% @version 1.7.1 {@date} {@time}
+%%% @copyright 2010-2018 Michael Truog
+%%% @version 1.7.4 {@date} {@time}
 %%%------------------------------------------------------------------------
 
 -module(nd_index).
@@ -58,6 +58,8 @@
         max,
         value
     }).
+-type state() :: #nd_index_state{}.
+-export_type([state/0]).
 
 %%%------------------------------------------------------------------------
 %%% External interface functions
